@@ -1,22 +1,53 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
+<title>自动问答系统</title>
+<head>自动问答系统</head>
 <body>
-<h1>问答系统</h1>
-<form action="/submit" method="post">
-问题<br\>
-<input type="text" name="question" id="question"  value="{{question}}"/>
-<input  type="submit" value="submit"/>
 <div>
-答案：<br\>
-<ul>
-	{% for answer in answers %}
-		<li>{{answer}}</li>
-	{% endfor %}
-</ul>
+    <div>
+        <a href="#pdMenu" data-toggle="collapse">是否判断</a>
+        <ul id="pdMenu">
+            <li><a href="#">d1</a></li>
+            <li><a href="#">d2</a></li>
+            <li><a href="#">d3</a></li>
+            <li><a href="#">d4</a></li>
 
+        </ul>
+        <a href="#ctMenu" data-toggle="collapse">多答案</a>
+        <ul id="ctMenu">
+            <li><a href="#">d1</a></li>
+            <li><a href="#">d2</a></li>
+            <li><a href="#">d3</a></li>
+            <li><a href="#">d4</a></li>
+        </ul>
+    </div>
+    <div>
+        <form action="/submit" method="post">
+            问题:
+            <input type="text" name="question" id="question" value="北京 位于 哪里"/>
+            <input type="submit" value="提交"/>
+
+            <div>
+                答案：<br/>
+                <ul>
+                    <li>答案1</li>
+                    <li>答案2</li>
+                    <li>答案3</li>
+                    <li>答案4</li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <div>
+        Top 5 问题搜索
+        <ol>
+            <li><a href="#"> 问题1</a></li>
+            <li><a href="#"> 问题2</a></li>
+            <li><a href="#"> 问题3</a></li>
+            <li><a href="#"> 问题4</a></li>
+            <li><a href="#"> 问题5</a></li>
+        </ol>
+    </div>
 </div>
-</form>
+
 </body>
 </html>

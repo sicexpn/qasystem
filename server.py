@@ -29,6 +29,6 @@ def submitQuestion():
 	return render_template('index.html',question=question,answers=answerlist)
 if __name__ == '__main__':
     app.run(
-	host="123.57.223.22",
+	host="0.0.0.0",
 	port=8888,
 	debug=True)
