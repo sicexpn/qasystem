@@ -28,5 +28,5 @@ def insert(question, answer):
 def insertTest():
     insert("question1", "answer1")
 
-
-insertTest()
+if __name__ == '__main__':
+    insertTest()
