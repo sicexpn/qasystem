@@ -11,10 +11,10 @@ def getConn():
 
 def insert(question, answer):
     db = getConn();
-    sql = """
-    insert into search_log (question_text,answer_text,count,cts)
-    VALUES (
-    """ + question + "," + answer + "," + str(1) + "," + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + ")"
+    ctime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    sql = "insert into search_log(question_text, answer_text, count, cts, uts) \
+    VALUES ('%s','%s','%d','%s','%s')" % \
+    (question ,answer ,1,ctime ,ctime)
 
     print "sql is " + sql
     cursor = db.cursor
