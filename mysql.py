@@ -12,21 +12,24 @@ def getConn():
 def insert(question, answer):
     db = getConn();
     sql = """
-    insert into search_log (question_test,answer_text,count,cts)
+    insert into search_log (question_text,answer_text,count,cts)
     VALUES (
     """ + question + "," + answer + "," + str(1) + "," + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + ")"
 
+    print "sql is " + sql
     cursor = db.cursor
     try:
         cursor.execute(sql)
         db.commit()
     except:
         db.rollback()
+        print "insert failed"
     db.close()
 
 
 def insertTest():
     insert("question1", "answer1")
+
 
 if __name__ == '__main__':
     insertTest()
