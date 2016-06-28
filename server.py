@@ -1,11 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from flask import Flask
-from flask import abort
-from flask import redirect
 from flask import render_template,request
 import os
-import sys  
+import sys
+
 reload(sys)  
 sys.setdefaultencoding('utf8') 
 app = Flask(__name__)
