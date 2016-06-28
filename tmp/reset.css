@@ -1,0 +1,61 @@
+.wrap{
+	border: 1px solid red;
+	margin: 0 auto;
+	
+}
+
+.head{
+	background-color:#6495ed;
+	line-height: 200px;
+	height: 200px;
+	font-size: 32px;
+	color: #FF6600;
+	text-align: center;
+}
+
+
+.left{
+	float: left;
+	width: 150px;
+	background-color: red;
+}
+
+
+.predict{
+	border: 1px solid black;
+	display: block;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+
+.area{
+	border: 1px solid black;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+
+
+.content{
+	float: left;
+	width: 400px;
+	height: 300px;
+	background-color: green;
+}
+
+.right{
+	clear: both;
+	float: left;
+	width: 150px;
+	background-color: blue;
+}
+#title_1 {
+	font-size: 20px; color: #E1E4EC; width: 100%;
+	filter: glow(color=#6699FF,direction=2)
+}
+
