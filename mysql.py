@@ -14,7 +14,7 @@ def insert(question, answer):
     sql = """
     insert into search_log (question_test,answer_text,count,cts)
     VALUES (
-    """ + question + "," + answer + "," + 1 + "," + time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()) + ")"
+    """ + question + "," + answer + "," + str(1) + "," + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + ")"
 
     cursor = db.cursor
     try:
