@@ -14,10 +14,10 @@ def insert(question, answer):
     ctime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     sql = "insert into search_log(question_text, answer_text, count, cts, uts) \
     VALUES ('%s','%s','%d','%s','%s')" % \
-    (question ,answer ,1,ctime ,ctime)
+          (question, answer, 1, ctime, ctime)
 
     print "sql is " + sql
-    cursor = db.cursor
+    cursor = db.cursor()
     try:
         cursor.execute(sql)
         db.commit()
