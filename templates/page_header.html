@@ -4,7 +4,7 @@
     <div class="kb">
         <!--<img src="knowledge.jpg" width="200px" height="150px"/>-->
     </div>
-    <form method="POST" action="/submit" class="search">
+    <form method="post" action="/submit" class="search">
         {% if question %}
             <input placeholder="请向书上苹果提问" id="question" name="question" type="text" value="{{ question }}"/>
         {% else %}

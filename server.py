@@ -4,6 +4,7 @@ from flask import Flask
 from flask import render_template, request
 import os
 import sys
+import mysql
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -21,7 +22,6 @@ def submitQuestion():
     if request.method == 'POST':
         question = request.form['question']
 
-        print question
         q_file = open('./qa/questions_for_test.txt', 'w')
         print >> q_file, question
         q_file.close()
@@ -29,6 +29,7 @@ def submitQuestion():
         answers = out.read()
         print "answer.."
         print answers
+        mysql.insert(question,answers)
         answerlist = answers.strip().split('\n')
         return render_template('answer_page.html', question=question, answers=answerlist)
 

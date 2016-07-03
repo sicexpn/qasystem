@@ -30,7 +30,8 @@ def insert(question, answer):
 
 def select(question):
     db = getConn();
-    sql = "select id,question_text,answer_text,cts,uts from search_log where question = '" + question + "'";
+    sql = "select id,question_text,count(*),answer_text,cts,uts from search_log where question_text = '" + question + "'" + "" \
+                                                                                                                            "group by question";
     cursor = db.cursor()
     results = cursor.execute(sql)
     for row in results:
@@ -39,6 +40,7 @@ def select(question):
         answer_text = row[2]
         cts = row[3]
         uts = row[4]
+
 
 def insertTest():
     insert("question1", "answer1")

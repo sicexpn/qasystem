@@ -10,7 +10,15 @@
 <body>
 {% include "page_header.html" %}
 <div class="wrap">
-{% block content %} {% endblock %}
+    {% block content %} {% endblock %}
+    <div class="right">
+        <span>热门问题搜索</span>
+        <ul>
+            {% for item in top5list %}
+                <li><a href="#">{{ item }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 {% include "page_footer.html" %}
 </body>
