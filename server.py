@@ -21,10 +21,11 @@ def submitQuestion():
     print request.method
     if request.method == 'POST':
         question = request.form['question']
-
+        question = question.encode('utf-8')
         q_file = open('./qa/questions_for_test.txt', 'w')
         print >> q_file, question
         q_file.close()
+
         out = os.popen('./getAnswer.sh')
         answers = out.read()
         print "answer.."

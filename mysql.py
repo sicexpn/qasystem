@@ -6,7 +6,7 @@ import time
 
 
 def getConn():
-    return MySQLdb.connect("123.57.223.22", "root", "12345", "qa_db")
+    return MySQLdb.connect("123.57.223.22", "root", "12345", "qa_db", charset="utf8")
 
 
 def insert(question, answer):
