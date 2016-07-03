@@ -4,8 +4,12 @@
     <div class="kb">
         <!--<img src="knowledge.jpg" width="200px" height="150px"/>-->
     </div>
-    <form method="post" action="/submit" class="search">
-        <input placeholder="请向书上苹果提问" id="question" name="query" type="text">
-        <input class="btn" value="问一下"/>
+    <form method="POST" action="/submit" class="search">
+        {% if question %}
+            <input placeholder="请向书上苹果提问" id="question" name="question" type="text" value="{{ question }}"/>
+        {% else %}
+            <input placeholder="请向书上苹果提问" id="question" name="question" type="text"/>
+        {% endif %}
+        <input class="btn" type="submit" value="问一下"/>
     </form>
 </div>

@@ -1,42 +1,29 @@
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="reset.css">
-<script src="jquery-1.8.2.min.js"></script>
-<script src="my.js">
-
-</script>
-<title>自动问答系统</title>
-
-<body>
-<div class="wrap">
-    <div class="head">
-        <div class="title">"书上苹果"知识图谱问答系统</div>
-        <!--<div class="description">“书上苹果”是一款基于知识图谱的智能问答系统</div>-->
-        <div class="kb">
-            <!--<img src="knowledge.jpg" width="200px" height="150px"/>-->
-        </div>
-        <form method="post" action="/submit" class="search">
-            <input placeholder="请向书上苹果提问" id="question" name="query" type="text">
-            <input class="btn" value="问一下"/>
-        </form>
-    </div>
-
+{% extends "base.html" %}
+{% block content %}
     <div class="content">
 
-        <span class="question_display">===> 问题展示</span>
+        <span class="question_display">===> {{ question }}</span>
         <span class="question_display">可能的答案</span>
         <ul class="answer_list">
-            <li>xx</li>
-            <li>xx</li>
-            <li>xx</li>
+            {% for answer in answers %}
+                <li>{{ answer }}</li>
+            {% endfor %}
         </ul>
     </div>
-    <div class="footer">
-        <img src="../minelab.png">
-        <span>网址:http://www.minelab.cn</span>
-        <span>地址：北京市海淀区西土城路10号北京邮电大学移动生活与新媒体实验室</span>
-        <span class="author">Designed By zm</span>
+    <div class="right">
+        <span>热门问题搜索</span>
+        <ul>
+            <li><a href="#"> 北京位于哪里？</a></li>
+            <li><a href="#"> 问题2</a></li>
+            <li><a href="#"> 问题3</a></li>
+            <li><a href="#"> 问题4</a></li>
+            <li><a href="#"> 问题5</a></li>
+        </ul>
     </div>
-</div>
-</body>
-</html>
+    <div>
+        <a href="/">返回主页</a>
+    </div>
+{% endblock %}
+
+
+
