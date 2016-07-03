@@ -8,12 +8,8 @@
     <script src="{{ url_for('static', filename='js/my.js') }}"/>
 </head>
 <body>
-{% block page_header %}
-    {% extends "page_header.html" %}
-{% endblock %}
+{% include "page_header.html" %}
 {% block content %} {% endblock %}
-{% block footer %}
-    {% extends "page_footer.html" %}
-{% endblock %}
+{% include "page_footer.html" %}
 </body>
 </html>
