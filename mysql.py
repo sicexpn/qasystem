@@ -32,18 +32,21 @@ def selectTop5():
     db = getConn()
     sql = "select count(*) as count,question_text from search_log group by question_text order by count desc limit 5";
     cursor = db.cursor()
-    results = cursor.execute(sql)
+    cursor.execute(sql)
+    results = cursor.fetchall()
     lst = []
     for row in results:
         lst.append(row[1])
     return results
+
 
 def select(question):
     db = getConn();
     sql = "select id,question_text,count(*),answer_text,cts,uts from search_log where question_text = '" + question + "'" + "" \
                                                                                                                             "group by question";
     cursor = db.cursor()
-    results = cursor.execute(sql)
+    cursor.execute(sql)
+    results = cursor.fetchall()
     for row in results:
         id = row[0]
         question_text = row[1]
