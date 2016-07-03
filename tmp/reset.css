@@ -1,24 +1,73 @@
+a {
+	text-decoration: none;
+}
+
 .wrap{
-	border: 1px solid red;
 	margin: 0 auto;
+	font-family: Consolas;
 	
 }
 
 .head{
-	background-color:#6495ed;
-	line-height: 200px;
-	height: 200px;
+	background-image: url(back.jpg);
+	background-size: cover;
+	height: 300px;
+}
+
+.head .title {
 	font-size: 32px;
-	color: #FF6600;
+	color: white;
+	position: absolute;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+
+.head .description {
+	position: absolute;
+	font-size: 20px;
+	margin-top: 80px;
+	margin-left: 80px;
+	color: white;
+}
+
+.head .kb {
+	position: absolute;
+	margin-left: 60px;
+	margin-top: 100px;
+	color: white;
+}
+
+.head .search {
+	position: absolute;
+	margin-left: 120px;
+	margin-top: 160px;
+}
+
+.btn {
+	border: none;
+	display: inline-block;
+	background-color: #006dcc;
+	/*
+	margin-top: 10px;
+	margin-left: -8px;
+	*/
+	width: 80px;
+	height: 40px;
+	color: white;
+	border-radius: 10px;
 	text-align: center;
+	margin-bottom: -20px;
 }
 
-
-.left{
-	float: left;
-	width: 150px;
-	background-color: red;
+#question {
+	display: inline-block;
+	width: 400px;
+	height: 40px;
+	font-size: 18px;
+	border-radius: 10px;
 }
+
+/*
 
 
 .predict{
@@ -39,23 +88,95 @@
 	text-align: center;
 }
 
-
+*/
 
 .content{
+	border: 1px solid black;
 	float: left;
-	width: 400px;
-	height: 300px;
-	background-color: green;
+	width: 700px;
+	font-size: 14px;
+	/*background-image: url(KG.jpg); 
+	background-size: cover;
+	color: white;
+	/*background-color: green;*/
 }
 
-.right{
+h2 {
+	font-size: 18px;
+}
+
+.content .binary {
 	clear: both;
+	display: inline-block;
 	float: left;
-	width: 150px;
-	background-color: blue;
-}
-#title_1 {
-	font-size: 20px; color: #E1E4EC; width: 100%;
-	filter: glow(color=#6699FF,direction=2)
+	margin-right: 50px;
 }
 
+.content .ask {
+	display: block;
+	float: left;
+}
+
+.content .ask_sentence {
+	clear: both;
+	margin-left: 120px;
+	margin-top: 50px;
+	margin-bottom: 10px;
+
+}
+
+.content .example {
+	clear: both;
+	display: inline-block;
+	margin-left: 120px;
+	margin-bottom: 50px;
+}
+
+.content li {
+	list-style: none;
+}
+
+.content .fill {
+	width: 100px;
+	height: 40px;
+	font-size: 18px;
+	border-radius: 10px;
+}
+
+.right {
+	float: left;
+	width: 200px;
+	padding: 20px;
+	font-size: 18px;
+}
+
+.right li {
+	list-style: none;
+	margin-bottom: 10px;
+}
+
+.footer {
+	clear: both;
+	padding: 50px;
+}
+
+.footer span {
+	display: block;
+
+}
+
+img {
+	width: 100px;
+	height: 50px;
+}
+
+.question_display {
+	display: block;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.answer_list {
+	margin-top: 20px;
+	margin-left: 20px;
+}

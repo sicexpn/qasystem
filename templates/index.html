@@ -1,63 +1,105 @@
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}">
-<script src="{{ url_for('static', filename='js/jquery-1.8.2.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/my.js') }}">
-
-</script>
-<title>自动问答系统</title>
-
-<body>
-<div class="wrap">
-    <div class="head">自动问答系统</div>
-    <div>
-        <div class="left">
-            <span class="predict" id="p1">二分类</span>
-
-            <div id="p1_childs">
-                <span class="area">d1</span>
-                <span class="area">d2</span>
-                <span class="area">d3</span>
-                <span class="area">d4</span>
-            </div>
-            <span class="predict" id="p2">实体预测</span>
-
-            <div id="p2_childs">
-                <span class="area">d1</span>
-                <span class="area">d2</span>
-                <span class="area">d3</span>
-                <span class="area">d4</span>
-            </div>
-        </div>
-    </div>
+{% extends "base.html" %}
+{% block content %}
     <div class="content">
-        <form action="/submit" method="post">
-            问题:
-            <input type="text" name="question" id="question" value="北京 位于 哪里"/>
-            <input type="submit" value="提交"/>
+        <ul>
+            <li>
+                <div>
+                    <h2>地理信息查询</h2>
+                    <span class="binary">判断对错</span>
+                    <span class="ask">您可以像如下方式提问:</span>
 
-            <div>
-                答案：<br/>
-                <ul>
-                    <li>答案1</li>
-                    <li>答案2</li>
-                    <li>答案3</li>
-                    <li>答案4</li>
-                </ul>
-            </div>
-        </form>
+                    <div class="ask_sentence">
+                        <input type="text" class="fill">
+                        <span>位于</span>
+                        <input type="text" class="fill">
+                        <span>吗?</span>
+                        <span class="btn">提交</span>
+                    </div>
+                    <span class="example">例如：北京位于中国吗？</span>
+                </div>
+                <div>
+                    <span class="binary">预测答案</span>
+                    <span class="ask">您可以像如下方式提问:</span>
+
+                    <div class="ask_sentence">
+                        <input type="text" class="fill">
+                        <span>位于</span>
+                        <span>哪里?</span>
+                        <span class="btn">提交</span>
+                    </div>
+                    <span class="example">例如：北京位于哪里？</span>
+                </div>
+            <li>
+                <div>
+                    <h2>影视信息查询</h2>
+                    <span class="binary">判断对错</span>
+                    <span class="ask">您可以像如下方式提问:</span>
+
+                    <div class="ask_sentence">
+                        <input type="text" class="fill">
+                        <span>位于</span>
+                        <input type="text" class="fill">
+                        <span>吗?</span>
+                        <span class="btn">提交</span>
+                    </div>
+                    <span class="example">例如：北京位于中国吗？</span>
+                </div>
+                <div>
+                    <span class="binary">预测答案</span>
+                    <span class="ask">您可以像如下方式提问:</span>
+
+                    <div class="ask_sentence">
+                        <input type="text" class="fill">
+                        <span>位于</span>
+                        <span>哪里?</span>
+                        <span class="btn">提交</span>
+                    </div>
+                    <span class="example">例如：北京位于哪里？</span>
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <h2>其他</h2>
+                    <span class="binary">判断对错</span>
+                    <span class="ask">您可以像如下方式提问:</span>
+
+                    <div class="ask_sentence">
+                        <input type="text" class="fill">
+                        <span>位于</span>
+                        <input type="text" class="fill">
+                        <span>吗?</span>
+                        <span class="btn">提交</span>
+                    </div>
+                    <span class="example">例如：北京位于中国吗？</span>
+                </div>
+                <div>
+                    <span class="binary">预测答案</span>
+                    <span class="ask">您可以像如下方式提问:</span>
+
+                    <div class="ask_sentence">
+                        <input type="text" class="fill">
+                        <span>位于</span>
+                        <span>哪里?</span>
+                        <span class="btn">提交</span>
+                    </div>
+                    <span class="example">例如：北京位于哪里？</span>
+                </div>
+            </li>
+
+
+        </ul>
     </div>
+
     <div class="right">
-        Top 5 问题搜索
-        <ol>
-            <li><a href="#"> 问题1</a></li>
+        <span>热门问题搜索</span>
+        <ul>
+            <li><a href="#"> 北京位于哪里？</a></li>
             <li><a href="#"> 问题2</a></li>
             <li><a href="#"> 问题3</a></li>
             <li><a href="#"> 问题4</a></li>
             <li><a href="#"> 问题5</a></li>
-        </ol>
+        </ul>
     </div>
-</div>
-</div>
-</body>
-</html>
+{% endblock %}
+
