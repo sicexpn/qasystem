@@ -36,8 +36,8 @@ def selectTop5():
     results = cursor.fetchall()
     lst = []
     for row in results:
-        lst.append(row[1])
-    return results
+        lst.append(row[1].encode('utf-8'))
+    return lst
 
 
 def select(question):
