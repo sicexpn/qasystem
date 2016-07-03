@@ -16,7 +16,7 @@ def insert(question, answer):
     VALUES ('%s','%s','%s','%s')" % \
           (question, answer, ctime, ctime)
 
-    print "sql is " + sql
+    # print "sql is " + sql
     cursor = db.cursor()
     try:
         cursor.execute(sql)
