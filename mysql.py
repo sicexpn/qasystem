@@ -28,6 +28,16 @@ def insert(question, answer):
     db.close()
 
 
+def selectTop5():
+    db = getConn()
+    sql = "select count(*) as count,question_text from search_log group by question_text order by count desc limit 5";
+    cursor = db.cursor()
+    results = cursor.execute(sql)
+    lst = []
+    for row in results:
+        lst.add(row[1])
+    return results
+
 def select(question):
     db = getConn();
     sql = "select id,question_text,count(*),answer_text,cts,uts from search_log where question_text = '" + question + "'" + "" \

@@ -13,7 +13,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    top5list = mysql.selectTop5()
+    return render_template('index.html', top5list=top5list)
 
 
 @app.route('/submit', methods=['POST'])
@@ -32,7 +33,8 @@ def submitQuestion():
         print answers
         mysql.insert(question, answers)
         answerlist = answers.strip().split('\n')
-        return render_template('answer_page.html', question=question, answers=answerlist)
+        top5list = mysql.selectTop5()
+        return render_template('answer_page.html', question=question, answers=answerlist, top5list=top5list)
 
 
 if __name__ == '__main__':
