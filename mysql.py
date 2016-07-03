@@ -13,7 +13,7 @@ def insert(question, answer):
     db = getConn();
     ctime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     sql = "insert into search_log(question_text, answer_text, cts, uts) \
-    VALUES ('%s','%s','%d','%s','%s')" % \
+    VALUES ('%s','%s','%s','%s')" % \
           (question, answer, ctime, ctime)
 
     print "sql is " + sql

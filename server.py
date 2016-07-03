@@ -29,7 +29,7 @@ def submitQuestion():
         answers = out.read()
         print "answer.."
         print answers
-        mysql.insert(question,answers)
+        mysql.insert(question, answers)
         answerlist = answers.strip().split('\n')
         return render_template('answer_page.html', question=question, answers=answerlist)
 
