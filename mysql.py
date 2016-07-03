@@ -35,7 +35,7 @@ def selectTop5():
     results = cursor.execute(sql)
     lst = []
     for row in results:
-        lst.add(row[1])
+        lst.append(row[1])
     return results
 
 def select(question):
